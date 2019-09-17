@@ -1,0 +1,18 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^3.6.3"
+  },
+  "scripts": {
+    "tsc:all": "yarn tsc:es5 && yarn tsc:2015 && yarn tsc:2016 && yarn tsc:2017 && yarn tsc:2018 && yarn tsc:esnext",
+    "tsc:es5": "tsc -p tsconfig.json -t es5 --outDir build-es5",
+    "tsc:2015": "tsc -p tsconfig.json -t es2015 --outDir build-es2015",
+    "tsc:2016": "tsc -p tsconfig.json -t es2016 --outDir build-es2016",
+    "tsc:2017": "tsc -p tsconfig.json -t es2017 --outDir build-es2017",
+    "tsc:2018": "tsc -p tsconfig.json -t es2018 --outDir build-es2018",
+    "tsc:esnext": "tsc -p tsconfig.json -t esnext --outDir build-esnext"
+  }
+}
