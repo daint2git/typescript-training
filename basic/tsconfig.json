@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    "lib": ["es2015", "esnext", "dom"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "watch": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
+}
