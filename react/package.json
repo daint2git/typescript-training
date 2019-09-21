@@ -4,25 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "lodash-es": "^4.17.15",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typescript": "^3.6.3"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.138",
-    "@types/lodash-es": "^4.17.3",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^3.0.0",
     "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.1"
   },
   "scripts": {
-    "tsc": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
     "dev": "webpack-dev-server --hot"
   }
 }

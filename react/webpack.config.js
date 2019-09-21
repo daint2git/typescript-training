@@ -1,13 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const rootDir = path.resolve(process.cwd())
+const srcPath = path.resolve(rootDir, 'src')
+const distPath = path.resolve(rootDir, 'dist')
+
 module.exports = {
   entry: {
-    app: path.join(__dirname, 'src/app.tsx'),
+    app: path.join(srcPath, 'app.tsx'),
   },
   output: {
     publicPath: '/',
-    path: path.join(__dirname, 'dist'),
+    path: distPath,
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
   },
@@ -23,13 +27,18 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
+      template: path.join(rootDir, 'index.html'),
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: distPath,
     host: '0.0.0.0',
     port: 6969,
   },

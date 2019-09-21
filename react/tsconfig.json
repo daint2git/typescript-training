@@ -4,13 +4,17 @@
     "outDir": "dist",
     "jsx": "react",
     "target": "es5",
-    "module": "es6",
+    "module": "esnext", // Dynamic import is only supported when '--module' flag is 'commonjs' or 'esNext'.
+    "lib": ["esnext", "dom"],
     "moduleResolution": "node",
-    "lib": ["es6", "dom"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowJs": true
   },
   "exclude": ["node_modules"],
   "include": ["src"]
